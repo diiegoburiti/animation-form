@@ -1,17 +1,14 @@
 const inputPassword = document.querySelector('input[type=password]');
-console.log(inputPassword);
+const showPassword = document.querySelector('[data-hide]');
 
-const showBtn = document.querySelector('[data-hide]');
-console.log(showBtn);
+showPassword.addEventListener('click', activePassword);
 
-showBtn.addEventListener('click', showPassword);
-
-function showPassword() {
+function activePassword() {
   if (inputPassword.type === 'password') {
     inputPassword.type = 'text';
-    showBtn.classList.add('hide');
+    showPassword.classList.add('hide');
   } else {
     inputPassword.type = 'password';
-    showBtn.classList.toggle('hide');
+    showPassword.classList.toggle('hide');
   }
 }
