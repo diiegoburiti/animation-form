@@ -18,4 +18,12 @@ function activePassword() {
 btnLogin.addEventListener('click', (event) => {
   event.preventDefault();
   wrapperForm.classList.add('hide');
+});
+
+wrapperForm.addEventListener('animationend', (event) => {
+  if (event.animationName === 'down') wrapperForm.style.display = 'none';
+}); 
+
+wrapperForm.addEventListener('animationstart', (event) => {
+  if (event.animationName === 'down') document.querySelector('body').style.overflow = 'hidden';
 }); 
