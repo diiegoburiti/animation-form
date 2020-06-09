@@ -46,11 +46,23 @@ body {
       background-color: #fff;
       padding: 50px;
       border-radius: 8px;
+      animation: fade 200ms;
 
       .input-block {
         margin-bottom: 15px;
         position: relative;
 
+        &:nth-child(1) {
+          animation: move 500ms;
+          //animation-delay: 250ms;
+          //animation-fill-mode: backwards;
+        }
+
+        &:nth-child(2) {
+          animation: move 400ms;
+          animation-delay: 150ms;
+          animation-fill-mode: backwards;
+        }
         label {
           color: #333;
           font-size: 0.825rem;
@@ -66,7 +78,6 @@ body {
           border-radius: 2px;
           border: none;
           border-bottom: 2px solid #ccddef;
-
           &[type="password"],
           &[type="email"],
           &[type="text"] {
@@ -79,26 +90,26 @@ body {
             }
           }
         }
+      }
 
-        i {
-          position: absolute;
+      i {
+        position: absolute;
+        color: $purple;
+        top: 60%;
+        left: 0;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: $duration;
+
+        &:hover {
           color: $purple;
-          top: 60%;
-          left: 0;
-          font-size: 1rem;
-          cursor: pointer;
-          transition: $duration;
-
-          &:hover {
-            color: $purple;
-          }
         }
-        .fa-eye {
-          transition: $duration;
+      }
+      .fa-eye {
+        transition: $duration;
 
-          &.hide::before {
-            content: "\f070";
-          }
+        &.hide::before {
+          content: "\f070";
         }
       }
 
@@ -109,11 +120,15 @@ body {
         width: 100%;
         display: block;
         text-decoration: none;
-        transition: transition;
+        transition: $duration;
+        animation: move 500ms;
+        animation-delay: 250ms;
+        animation-fill-mode: backwards;
 
         &:hover {
           font-weight: bold;
         }
+
       }
       .btn-login {
         display: block;
@@ -128,6 +143,9 @@ body {
         min-width: 130px;
         transition: $duration;
         font-weight: bold;
+        animation: move 500ms;
+        animation-delay: 250ms;
+        animation-fill-mode: backwards;
 
         &:hover {
           background-color: #fff;
@@ -136,4 +154,32 @@ body {
       }
     }
   }
+}
+
+.input-block {
+  margin-bottom: 15px;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
 }
