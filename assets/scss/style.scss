@@ -160,26 +160,6 @@ body {
   margin-bottom: 15px;
 }
 
-@keyframes move {
-  from {
-    opacity: 0;
-    transform: translateX(-35%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
+@import 'form-hide';
+@import 'move';
+@import 'fade';

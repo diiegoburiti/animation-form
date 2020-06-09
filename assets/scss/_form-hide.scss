@@ -1,0 +1,14 @@
+.hide {
+  animation: down 500ms;
+  animation-fill-mode: forwards; // Final position
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
