@@ -1,0 +1,21 @@
+.invalid-form {
+  animation: invalid 250ms linear, fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes invalid {
+  0%, 100% {
+    transform: translateX(0)
+  }
+
+  35% {
+    transform: translateX(-15%)
+  }
+
+  70% {
+    transform: translateX(15%)
+  }
+
+}
+
+@import 'fade'

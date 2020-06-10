@@ -17,7 +17,20 @@ function activePassword() {
 
 btnLogin.addEventListener('click', (event) => {
   event.preventDefault();
-  wrapperForm.classList.add('hide');
+  const inputs = [...document.querySelectorAll('.input-block input')];
+
+  inputs.forEach((field) => {
+    if (field.value === '') wrapperForm.classList.add('invalid-form');
+  });
+
+  const formError = document.querySelector('.invalid-form');
+  if (formError) {
+    formError.addEventListener('animationend', (event) => {
+      if (event.animationName === 'invalid') formError.classList.remove('invalid-form');
+    })
+  } else {
+    wrapperForm.classList.add('hide');
+  }
 });
 
 wrapperForm.addEventListener('animationend', (event) => {
@@ -26,4 +39,4 @@ wrapperForm.addEventListener('animationend', (event) => {
 
 wrapperForm.addEventListener('animationstart', (event) => {
   if (event.animationName === 'down') document.querySelector('body').style.overflow = 'hidden';
-}); 
+});
