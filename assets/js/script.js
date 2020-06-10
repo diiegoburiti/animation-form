@@ -22,7 +22,7 @@ btnLogin.addEventListener('click', (event) => {
 
 wrapperForm.addEventListener('animationend', (event) => {
   if (event.animationName === 'down') wrapperForm.style.display = 'none';
-}); 
+});
 
 wrapperForm.addEventListener('animationstart', (event) => {
   if (event.animationName === 'down') document.querySelector('body').style.overflow = 'hidden';
