@@ -1,2 +1,0 @@
-.hide{-webkit-animation:down 1.2s forwards;animation:down 1.2s forwards;-webkit-animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1)}@-webkit-keyframes down{from{-webkit-transform:translateY(0);transform:translateY(0)}to{-webkit-transform:translateY(100vh);transform:translateY(100vh)}}@keyframes down{from{-webkit-transform:translateY(0);transform:translateY(0)}to{-webkit-transform:translateY(100vh);transform:translateY(100vh)}}
-/*# sourceMappingURL=wrapper-hide.css.map */

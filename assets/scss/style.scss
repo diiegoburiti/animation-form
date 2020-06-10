@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul {
+  list-style: none;
+}
 
 $purple: #7159c1;
 $duration: 0.3s;
@@ -156,10 +159,7 @@ body {
   }
 }
 
-.input-block {
-  margin-bottom: 15px;
-}
-
+@import 'squares';
 @import 'move';
 @import 'fade';
 @import 'wrapper-hide';

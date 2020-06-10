@@ -2,10 +2,11 @@ const inputPassword = document.querySelector('input[type=password]');
 const showPassword = document.querySelector('[data-hide]');
 const btnLogin = document.querySelector('.btn-login');
 const wrapperForm = document.querySelector('.wrapper');
+const form = document.querySelector('[data-form]');
 
 showPassword.addEventListener('click', activePassword);
 
-function activePassword() {
+function activePassword(event) {
   if (inputPassword.type === 'password') {
     inputPassword.type = 'text';
     showPassword.classList.add('hide');
@@ -15,7 +16,7 @@ function activePassword() {
   }
 }
 
-btnLogin.addEventListener('click', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
   const inputs = [...document.querySelectorAll('.input-block input')];
 
@@ -29,7 +30,7 @@ btnLogin.addEventListener('click', (event) => {
       if (event.animationName === 'invalid') formError.classList.remove('invalid-form');
     })
   } else {
-    wrapperForm.classList.add('hide');
+    wrapperForm.classList.add('wrapper-hide');
   }
 });
 
@@ -40,3 +41,6 @@ wrapperForm.addEventListener('animationend', (event) => {
 wrapperForm.addEventListener('animationstart', (event) => {
   if (event.animationName === 'down') document.querySelector('body').style.overflow = 'hidden';
 });
+
+const squares = document.querySelector('.squares');
+console.log(squares);
